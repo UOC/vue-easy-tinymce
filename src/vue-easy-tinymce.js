@@ -56,7 +56,7 @@ var VueEasyTinyMCE = {
             toolbar2: this.toolbar2,
             plugins: this.plugins,
             init_instance_callback: function (editor) {
-                editor.on(this.events, function (e) {
+                editor.on(component.events, function (e) {
                     component.updateValue(editor.getContent());
                 });
                 //editor.setContent(component.value); //use instead :value="value"
