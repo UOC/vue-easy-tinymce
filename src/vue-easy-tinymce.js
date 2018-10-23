@@ -22,7 +22,8 @@ var VueEasyTinyMCE = {
             default: function () {
                 return {};
             }, type: Object
-        }
+        },
+        events: {type: String, default: 'Change KeyUp Undo Redo'}         
     },
 
     data: function () {
@@ -55,7 +56,7 @@ var VueEasyTinyMCE = {
             toolbar2: this.toolbar2,
             plugins: this.plugins,
             init_instance_callback: function (editor) {
-                editor.on('Change KeyUp Undo Redo', function (e) {
+                editor.on(this.events, function (e) {
                     component.updateValue(editor.getContent());
                 });
                 //editor.setContent(component.value); //use instead :value="value"
