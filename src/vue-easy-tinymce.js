@@ -88,10 +88,8 @@ var VueEasyTinyMCE = {
     watch: {
         value: function (newValue, oldValue) {
             // if v-model content change programmability
-            if (this.objTinymce !== null) {
-                if (this.value !== this.objTinymce.getContent())
-                    this.objTinymce.setContent(this.value);
-            }
+            if (this.objTinymce !== null && this.value !== this.objTinymce.getContent())
+                this.objTinymce.setContent(this.value);
         }, 
         objTinymce: function() {
             if (this.value !== this.objTinymce.getContent())
